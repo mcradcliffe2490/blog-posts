@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "gray-matter": "^4.0.3",
+    "node-fetch": "^2.7.0"
+  }
+}

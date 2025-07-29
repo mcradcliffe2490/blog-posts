@@ -1,3 +1,15 @@
+---
+summary: >-
+  Here is a 2-3 sentence summary of the blog post:
+
+
+  Oat milk has become a game-changer in the lactose-free milk alternative
+  market, offering a versatile and delicious option that the author believes is
+  superior to dairy milk. The post explores the humble origins and virtuous
+  nature of oats, as well as the superior taste and creaminess of oat milk in
+  coffee and tea drinks, making a compelling case for why oat milk is the milk
+  of the future.
+---
 Oat milk has forever changed the lactose-free game
 ==================================================
 
