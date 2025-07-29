@@ -1,0 +1,30 @@
+name: Generate AI Summaries
+
+on:
+  push:
+    paths:
+      - 'Posts/**/*.md'
+  pull_request:
+    paths:
+      - 'Posts/**/*.md'
+
+jobs:
+  generate-summaries:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install gray-matter node-fetch@2 dotenv
+      - name: Run summary generator
+        env:
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+        run: node generate-summaries.js
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: auto-generate AI summaries for blog posts' 
