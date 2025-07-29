@@ -7,7 +7,7 @@ const matter = require('gray-matter');
 require('dotenv').config();
 const fetch = require('node-fetch');
 
-const BLOG_POSTS_DIR = path.resolve(__dirname, '/Posts'); // <-- Set this to your Posts dir
+const BLOG_POSTS_DIR = path.resolve(__dirname, '../blog-posts/Posts'); // <-- Set this to your Posts dir
 const CLAUDE_API_KEY = process.env.CLAUDE_API_KEY;
 const CLAUDE_MODEL = 'claude-3-haiku-20240307'; // or claude-3-sonnet-20240229, etc.
 
