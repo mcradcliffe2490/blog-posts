@@ -7,12 +7,14 @@ const matter = require('gray-matter');
 require('dotenv').config();
 const fetch = require('node-fetch');
 
-const BLOG_POSTS_DIR = path.resolve(__dirname, '../blog-posts/Posts'); // <-- Set this to your Posts dir
+const BLOG_POSTS_DIR = path.resolve(__dirname, 'Posts');
+const METADATA_FILE = path.resolve(__dirname, 'metadata.json');
 const CLAUDE_API_KEY = process.env.CLAUDE_API_KEY;
 const CLAUDE_MODEL = 'claude-3-haiku-20240307'; // or claude-3-sonnet-20240229, etc.
 
 async function generateSummary(content) {
-  const prompt = `Summarize the following blog post in 2-3 sentences for a blog index.\n\n${content}`;
+  const prompt = `Summarize the following blog post in 2-3 sentences for a blog index. Only output the summary, no other text.
+    use a more informal tone. Do not use any emojis.\n\n${content}`;
   const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -37,26 +39,43 @@ async function generateSummary(content) {
   return data.content && data.content[0] && data.content[0].text.trim();
 }
 
-async function processFile(filePath) {
+async function processFile(filePath, metadata) {
   const raw = fs.readFileSync(filePath, 'utf8');
   const parsed = matter(raw);
-  if (parsed.data.summary && parsed.data.summary.trim() !== '') {
-    console.log(`✔ Summary exists for ${path.basename(filePath)}`);
-    return;
+  const filename = path.basename(filePath, '.md');
+  
+  if (metadata[filename] && metadata[filename].summary && metadata[filename].summary.trim() !== '') {
+    console.log(`✔ Summary exists for ${filename}`);
+    return metadata;
   }
-  console.log(`⏳ Generating summary for ${path.basename(filePath)}...`);
+  
+  console.log(`⏳ Generating summary for ${filename}...`);
   const summary = await generateSummary(parsed.content);
-  parsed.data.summary = summary;
-  const newContent = matter.stringify(parsed.content, parsed.data);
-  fs.writeFileSync(filePath, newContent, 'utf8');
-  console.log(`✅ Summary added for ${path.basename(filePath)}`);
+  
+  if (!metadata[filename]) {
+    metadata[filename] = {};
+  }
+  metadata[filename].summary = summary;
+  
+  console.log(`✅ Summary added for ${filename}`);
+  return metadata;
 }
 
 async function main() {
+  // Load existing metadata
+  let metadata = {};
+  if (fs.existsSync(METADATA_FILE)) {
+    const metadataContent = fs.readFileSync(METADATA_FILE, 'utf8');
+    metadata = JSON.parse(metadataContent);
+  }
+  
   const files = fs.readdirSync(BLOG_POSTS_DIR).filter(f => f.endsWith('.md'));
   for (const file of files) {
-    await processFile(path.join(BLOG_POSTS_DIR, file));
+    metadata = await processFile(path.join(BLOG_POSTS_DIR, file), metadata);
   }
+  
+  // Save updated metadata
+  fs.writeFileSync(METADATA_FILE, JSON.stringify(metadata, null, 4), 'utf8');
   console.log('All done!');
 }
 

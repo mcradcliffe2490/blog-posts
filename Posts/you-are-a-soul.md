@@ -1,15 +1,4 @@
 ---
-summary: >-
-  Here is a 2-3 sentence summary of the blog post:
-
-
-  The blog post explores the biblical perspective on the concept of the "soul,"
-  which differs significantly from the common Western view. It argues that in
-  the Bible, all living creatures are described as having or being "souls"
-  (nephesh), rather than the soul being a unique human trait that separates us
-  from animals. The post also discusses how the biblical view sees the soul as
-  an inseparable mix of spiritual and physical aspects, in contrast to the idea
-  of the soul as a purely immaterial essence.
 ---
 You are a soul: a biblical perspective on what makes a being
 ============================================================

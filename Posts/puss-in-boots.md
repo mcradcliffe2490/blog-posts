@@ -1,13 +1,4 @@
 ---
-summary: >-
-  Here is a 2-3 sentence summary of the blog post:
-
-
-  The blog post explores the themes of discontent and the fear of death in the
-  movie "Puss in Boots: The Last Wish." It examines how the main characters,
-  including Puss, Goldilocks, and Jack Horner, grapple with these issues, and
-  how the movie ultimately conveys a message about finding contentment and
-  embracing life in the face of mortality.
 ---
 Puss in Boots: The Last Wish — Finding Contentment Beyond the Fear of Death
 ===========================================================================

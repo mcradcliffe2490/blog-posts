@@ -1,10 +1,4 @@
 ---
-summary: >-
-  The blog post reflects on the author's experience of ringing in the new year,
-  filled with a mix of optimism and anxiety about the future. Despite the
-  uncertainties and challenges facing the world, the author finds hope in their
-  Christian faith and the belief that God's presence and promises can sustain
-  them through the coming year.
 ---
 # On New Years 2024
 
