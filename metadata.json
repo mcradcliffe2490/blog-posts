@@ -2,21 +2,28 @@
     "new-years-2024": {
         "date": "01-01-2024",
         "title": "On New Years 2024",
-        "category": "Misc"
+        "category": "Misc",
+        "summary": "The blog post reflects on the author's experience of ringing in the new year with a mix of optimism and underlying anxiety about the state of the world and their personal life. Despite the uncertainties, the author finds comfort in their faith and the hope of a better future."
     },
     "oat-milk": {
         "date": "06-07-2024",
         "title": "Oat milk has forever changed the lactose-free game",
-        "category": "Misc"
+        "category": "Misc",
+        "summary": "Oat milk has become a game-changer in the lactose-free world, offering a creamy and delicious alternative that can be used for various purposes, from coffee to cooking. The author raves about the versatility and superior taste of oat milk, making a compelling case for why it's the superior milk substitute."
     },
     "puss-in-boots": {
         "date": "02-28-2024",
         "title": "Puss in Boots: The Last Wish — Finding Contentment Beyond the Fear of Death",
-        "category": "Philosophy"
+        "category": "Philosophy",
+        "summary": "The blog post explores the themes of discontent and fear of death in the movie \"Puss in Boots: The Last Wish.\" It highlights how the different characters, like Puss, Goldilocks, and Jack Horner, deal with their own forms of discontent, and how the movie's message encourages finding contentment beyond the fear of death by embracing the present moment and cherishing relationships."
     },
     "you-are-a-soul": {
         "date": "01-06-2023",
         "title": "You are a soul: a biblical perspective on what makes a being",
-        "category": "Philosophy"
+        "category": "Philosophy",
+        "summary": "Here is a 2-3 sentence summary of the blog post in a more informal tone, without using any emojis:\n\nThe blog post explores the biblical perspective on the concept of the soul, which differs quite a bit from the common Western view. It suggests that in the Bible, all living creatures are considered to have a \"soul\" or \"being,\" rather than the soul being something unique to humans that separates us from animals."
+    },
+    "test-file": {
+        "summary": "A lighthearted blog post about making tiny, insignificant changes. The author pokes fun at the idea of writing a post about something as mundane as small changes. A humorous take on the everyday."
     }
 }
