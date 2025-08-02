@@ -13,8 +13,8 @@ const CLAUDE_API_KEY = process.env.CLAUDE_API_KEY;
 const CLAUDE_MODEL = 'claude-3-haiku-20240307'; // or claude-3-sonnet-20240229, etc.
 
 async function generateSummary(content) {
-  const prompt = `Summarize the following blog post in 2-3 sentences for a blog index. Only output the summary, no other text.
-    use a more informal tone. Do not use any emojis.\n\n${content}`;
+  const prompt = `Summarize the following blog post in 2-3 sentences for a blog index.
+    use a more informal tone. Do not use any emojis. Only output the summary, no other text.\n\n${content}`;
   const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
